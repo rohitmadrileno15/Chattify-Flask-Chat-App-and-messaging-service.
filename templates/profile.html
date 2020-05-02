@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8"> <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  hr{
+    height: 10px;
+  border: 0;
+
+  box-shadow: 0 7px 7px -10px #8c8c8c inset;
+  }
+
+  .container{
+    margin-top: 30px;
+
+  }
+
+  body {
+        text-align: center;
+    background-color: black;
+    position: relative;
+  }
+
+  h2{
+    font-family: 'Andika', sans-serif;
+    color: #50B6F2;
+  }
+  p{
+    font-size: 18px;
+    color: white;
+  }
+
+span a{
+  background-color: inherit;
+  color: yellow;
+}
+span a:hover{
+  background-color: inherit;
+  color: yellow;
+}
+
+  h1{font-size: 24px;
+      font-family: 'Righteous', cursive;
+  }
+  a:link{
+    text-decoration: none;
+  }
+
+  a:link:hover{
+    background:white;
+     text-decoration-color: black;
+  }
+
+  </style>
+  <script type="text/javascript">
+  function codeAddress() {
+    if (navigator.onLine) {
+
+    } else {
+      alert("Offline");
+    }
+
+          }
+
+          </script>
+
+</head>
+<body onload="codeAddress()" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+
+
+<div class="container">
+
+      <h1 style="font-size:30px;">Chattify </h1>
+
+
+
+
+
+
+
+        <h2>{{username}}</h2>
+        <p>
+
+            Email - {{email}}
+<br>
+              Password - {{Password}}
+
+
+        </p>
+      <hr>
+
+<span class="badge badge-pill badge-warning"> <a href="/home">Go Back</a></span>
+
+  </div>
+
+
+</body>
+</html>

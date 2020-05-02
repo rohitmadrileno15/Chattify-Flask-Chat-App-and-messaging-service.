@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>chattify - Message</title>
+  <meta charset="utf-8"> <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  hr{
+    height: 10px;
+  border: 0;
+
+  box-shadow: 0 7px 7px -10px #8c8c8c inset;
+  }
+.btn{
+  background: black;
+  color:white;
+  font-style: normal;
+}
+.btn:hover{
+  border-radius: 2px;
+  border-color: white;
+
+    background: white;
+    color:black;
+}
+.btn-outline-info{
+  font-weight: bold;
+}
+  .container{
+    margin-top: 30px;
+  }
+  .nav{
+    margin-top: 120px;
+    cursor: pointer;
+  }
+  body {
+    background-color: black;
+    position: relative;
+  }
+  ul.nav-pills {
+    top: 20px;
+    position: fixed;
+    cursor: pointer;
+  }
+  h2{
+    font-size: 20px;
+    font-family: 'Andika', sans-serif;
+    color: #50B6F2;
+  }
+  p{
+    font-size: 18px;
+  }
+  li{
+    font-size: 16px;
+    color:white;
+  }
+
+  div.col-sm-9 div {
+    height: 100px;
+    font-size: 28px;
+  }
+  #section1 {color: white; background-color: black;}
+  #section2 {color: white; background-color: black;}
+  #section3 {color: white; background-color: black;}
+  #section41 {color: white; background-color: black;}
+  #section42 {color: white; background-color: black;}
+
+  @media screen and (max-width: 810px) {
+    #section1, #section2, #section3 {
+      margin-left: 150px;
+    }
+  }
+  h4{
+    font-size: 18px;
+font-family: sans-serif;
+  }
+  h1{font-size: 24px;
+      font-family: 'Righteous', cursive;
+  }
+  a:link{
+    text-decoration: none;
+  }
+  #section3 a:link{
+    text-decoration: none;
+  }
+
+#section3  a:link:hover{
+    background:white;
+    text-decoration-color: black;
+  }
+
+  </style>
+  <script type="text/javascript">
+  function codeAddress() {
+    if (navigator.onLine) {
+
+    } else {
+      alert("Offline");
+    }   }
+   </script>
+
+</head>
+<body onload="codeAddress()" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+
+
+<div class="container">
+
+      <h1 style="font-size:30px;">Chattify </h1>
+
+  <div class="row">
+    <nav class="col-sm-3" id="myScrollspy">
+<h3 style="color:white;">Users</h3>
+            <ul class="nav nav-pills nav-stacked">
+
+{%for post in userlist%}
+        <li> <h2> {{post}} </h2></li>
+{% endfor %}
+      </ul>
+    </nav>
+
+    <div class="col-sm-9">
+      <div id="section1">
+        <form method = 'POST' action = '' enctype="multipart/form-data">
+          {{form.hidden_tag()}}
+          <fieldset class = "form-group">
+
+
+              <div class = "form-group">
+              {{form.usernameTO.label(class = "form-control-label" ,rows="5") }}
+                               {% if form.usernameTO.errors %}
+
+                               {{form.usernameTO(placeholder="Enter your message here",class= "form-control form-control-lg is-invalid") }}
+
+                               <div class = "invalid-feedback">
+
+                                 {% for errors in form.usernameTO.errors %}
+                       <span>
+
+                         {{error}}
+                         </span>
+                                 {% endfor %}
+
+
+                                 </div>
+
+                                 {% else %}
+
+                     {{form.usernameTO(class= "form-control form-control-lg")}}
+
+                               {% endif %}
+
+
+                            </div>
+
+                             <div class = "form-group">
+              {{form.message.label(class = "form-control-label" ,rows="10") }}
+                               {% if form.message.errors %}
+
+                               {{form.message(class= "form-control form-control-lg is-invalid") }}
+
+                               <div class = "invalid-feedback">
+
+                                 {% for errors in form.message.errors %}
+                       <span>
+
+                         {{error}}
+                         </span>
+                                 {% endfor %}
+
+
+                                 </div>
+
+                                 {% else %}
+
+                     {{form.message(class= "form-control form-control-lg")}}
+
+                               {% endif %}
+
+
+                            </div>
+
+
+
+        </fieldset>
+
+                    <div class = "form-group">
+
+                      {{form.submit(class= "btn btn-outline-info")}}
+                    </div>
+
+
+
+        </form>
+
+
+<hr>      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

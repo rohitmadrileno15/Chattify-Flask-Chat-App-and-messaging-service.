@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chattify -Chat and more </title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style media="screen">
+*{
+  padding: :0;
+  margin:0;
+  box-sizing: border-box;
+
+}
+.navbar-brand{
+
+  color: #d8d8d8;
+  font-family: "Karla";
+
+}
+.navbar-expand-md bg-dark navbar-dark{
+background-color: #333;
+font-family: "Karla";
+
+}
+
+
+.text {
+  background-color: white;
+  color: black;
+  font-size: 10vw;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 10px;
+  width: 50%;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+mix-blend-mode: screen;
+}
+body{
+
+  background-color: #000415;
+
+}
+.container{
+  font-family: "karla";
+  color: #d8d8d8;
+  margin-top: 5%;
+  position:  absolute;
+  margin-left: 30px;
+  margin-bottom: auto;
+  margin-right: auto;
+
+}
+
+.glow {
+  margin-top: 8%;
+  margin-right: auto;
+  margin-left: auto;
+  font-Color:"Karla"
+  font-size: 80px;
+  color: #fff;
+
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6, 0 0 50px #0073e6, 0 0 60px #0073e6, 0 0 70px #0073e6;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #00e6e6, 0 0 40px #00e6e6, 0 0 50px #00e6e6, 0 0 60px #00e6e6, 0 0 70px #00e6e6, 0 0 80px #00e6e6;
+  }
+}
+p{
+  margin-top: 10px;
+
+}
+
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+.btns{
+  margin-top: 20px;
+  background: #d8d8d8;
+  cursor: pointer;
+  color: black;
+  padding: 12px 20px;
+  float: left;
+  border-radius: 20px;
+  border: 2px solid black;
+  margin-left: 10px;
+
+}
+.btns:hover{
+  border-color: white;
+  background: black;
+   color:white;
+}
+img{
+  margin-top:80px;
+  margin-left: 175px;
+  width:700px;
+  filter: grayscale(1);
+
+}
+img:hover{
+  filter:grayscale(0);
+  transition: 2s;
+  cursor: pointer;
+}
+
+#demo{
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family:inherit;
+  font-size: 18px;
+}
+h1{
+    font-family: 'Righteous', cursive;
+}
+footer{
+  text-align: center; background-color: #000415; font-family: 'Varela Round', sans-serif;
+}
+a:link{
+    text-decoration: none;
+    color:white;
+}
+strong{
+font-family: 'Varela Round', sans-serif;
+font-size: 15px;
+color:#a7ce9f;
+}
+#demi{
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+    function codeAddress() {
+      if (navigator.onLine) {
+
+      } else {
+        alert("Offline");
+      }
+
+            }
+
+            </script>
+
+  </head>
+  <body onload="codeAddress()">
+
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark" >
+      <a class="navbar-brand" href="#"> Chattify</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar" >
+        <ul class="navbar-nav" >
+          <li class="nav-item">
+            <a class="nav-link" href="/login"><strong>Log In</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register"><strong>Register</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about"><strong>About</strong></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+<main>
+
+
+  <div class="container">   <br>
+     <h1 class="glow">Chattify </h1>
+
+<br>
+
+    <p><h3>Redefining the old school way.</h3></p>
+<br>
+
+    <button type="button" class = "btns" action="/register" name="button"> Join in </button>
+    <button class = "btns" onclick="typeWriter()"> Know more </button>
+    <br>
+    <h2>
+      <br>
+      <br>
+
+      <p id="demo"></p>
+      <br><br>
+      <p id="demi"></p>
+    </h2>
+
+ Developed by @justro.hit
+  </div>
+
+  <script>
+  var i = 0;
+  var t = 'End to End encryption of the messages that you push.';
+  var tyt = "fun Arcades to play with.";
+  var txt = t + " And, " + tyt
+  var speed = 40;
+
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("demo").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+}
+  </script>
+
+ 
+
+  </body>
+</html>

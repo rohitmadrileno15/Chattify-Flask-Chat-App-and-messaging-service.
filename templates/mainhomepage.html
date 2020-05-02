@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title> <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <style media="screen">
+    body {
+background: black;
+box-sizing: content-box;
+}
+hr{
+  height: 10px;
+border: 0;
+
+box-shadow: 0 7px 7px -10px #8c8c8c inset;
+}
+
+.menu {
+position: fixed;
+height: 100vh;
+background: #F9D401;
+width: 10vw;
+transition: 1s;
+box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
+}
+.menu:hover {
+width: 40vw;
+}
+.menu:hover ~ .container {
+transform: perspective(80vw) rotateY(10deg) translateX(35vw) scaleY(1.2);
+}
+.menu:hover nav {
+left: 0%;
+}
+
+.container {
+
+width: 90%;
+margin-left: 8vw;
+background: black;
+transition: 1s;
+transform-origin: left center;
+color: white;
+}
+.container .content {
+padding: 6px 20%;
+font-size: 21px;
+}
+
+nav {
+position: absolute;
+margin-top: 30%;
+left: -1000px;
+transition: 0.5s;
+}
+nav ul {
+color: white;
+text-transform: uppercase;
+list-style-type: none;
+}
+nav li {
+line-height: 3em;
+letter-spacing: 0.3em;
+}
+nav a {
+font-size: 34px;
+text-decoration: none;
+color: white;
+font-weight: 600;
+}
+nav a:hover {
+color: black;
+}
+h2{
+  font-family: 'Andika', sans-serif;
+  color: #50B6F2;
+
+p {
+line-height: 1.5em;
+}
+a:link{
+ text-decoration: none;
+ color:white;
+}
+
+.container a {
+  text-decoration: none;
+  color:white;
+}
+h1 {
+  font-size: 24px;
+  font-family: 'Righteous', cursive;
+color: #bbb;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+  <nav>
+		<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="/userprofile">Profile</a></li>
+  <li><a href="/inbox">Inbox</a></li>
+	<li><a href="/message">Message</a></li>
+	<li><a href="/loggedout">Log Out</a></li>
+		</ul>
+		</nav>
+</div>
+<div class="container">
+
+	<div class="content">
+<h1 >Chattify </h1>
+    <h2>All Chat</h2>
+    <p>Join in the chat with all the connected users <a href="/chat">here</a>.</p>
+
+<hr>
+  <h2>Messages</h2>
+  <p>
+    Message others and chat in real time.
+  </p>
+  <hr>
+
+    <h2> Arcades</h2>
+    <p>Play fun games <br>
+      <ul>
+
+
+      <li> <a href="/colorburster"> Color Burster</a> </li>
+    <li> <a href="/towerblock">Tower Block</a> </li>
+<li> <a href="/cube">Rubik's Cube</a> </li>
+   </ul>
+  </p>	</div>
+
+</div>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Chattify - All Chat</title>
+   <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Righteous&family=Varela+Round&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style media="screen">
+.panel-heading{
+text-align:center;
+ margin: auto;
+width: 50%;
+min-width: 300px;
+max-width: 500px;
+
+}
+.badge{
+font-family: 'Varela Round', sans-serif;
+}
+
+.w3-animate-left{font-family: 'Varela Round', sans-serif;
+
+}
+.w3-cell{
+  border-radius: 5px;
+
+  margin: auto;
+}
+footer{
+  text-align: center;
+}
+  .w3-cell-row{
+    margin-left: 15px;
+    margin-right: 100px;
+    margin-top: auto;
+
+  }
+  h1{
+  font-family: 'Righteous', cursive;
+  color: 	#9999ff;
+  }
+.w3-button{
+  font-family: 'Righteous', cursive;
+
+}
+
+a:link{
+    text-decoration: none;
+}
+.message{
+width: 300px; height: 25px;
+  }
+</style>
+ </head>
+ <body>
+   <nav >
+
+     <div class="w3-bar w3-black">
+       <button class="w3-button w3-left" onclick="window.location.href = '/home';">Home</button>
+
+       <button class="w3-button w3-right"> <a href= "/chat" >Refresh </a></button>
+</nav>
+
+   <div class = "container">
+     <br>
+     <h1 style="font-size:30px;">Chattify </h1>  
+
+<br>
+
+  <div class="w3-cell-row">
+    <h3 style="
+    font-family: 'Varela Round', sans-serif; color: #ccc; font-size: 22px;">You haven't typed yet..</h3>
+
+    <div class="w3-cell">
+
+<hr>
+    </div>
+  </div>
+
+<br>
+<div class="panel-heading">
+  <br>
+   <form action="" method="POST">
+     <!-- <input type="text" class="username" placeholder="User Name" /> -->
+
+     <input rows="3" cols="70" type="text" class="message" pattern="[A-Za-z0-9-_,.:;''!@#$^+()""]{1,}" placeholder="Enter your message" />
+
+&nbsp;
+     <input   class="w3-button w3-indigo" type="submit"/>
+   </form>
+   <br>
+   </div>
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+   <script type="text/javascript">
+     var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+     socket.on( 'connect', function() {
+       socket.emit( 'my event', {
+         data: 'User Connected'
+       } )
+       var form = $( 'form' ).on( 'submit', function( e ) {
+         e.preventDefault()
+         //let user_name = $( 'input.username' ).val()
+         let user_input = $( 'input.message' ).val()
+         socket.emit( 'my event', {
+           user_name : "",
+           message : user_input
+         } )
+         $( 'input.message' ).val( '' ).focus()
+       } )
+     } )
+     socket.on( 'my response', function( msg ) {
+       console.log( msg )
+       if( typeof msg.user_name !== 'undefined' ) {
+         $( 'h3' ).remove()
+         $( 'div.w3-cell' ).append( '<div   class="w3-animate-left" >'+ '<span style="color:#00FEEF;" class="badge badge-pill badge-dark">' +  msg.user_name +   '</span> '+ "<p>" +msg.message+ "</p>"+'</div>' );
+               }
+     })
+   </script>
+
+   <!-- </div> -->
+
+   <footer>
+     <p>Refreshing the page will erase all of the present chats</p>
+
+   </footer>
+</div>
+
+ </body>
+ </html>
